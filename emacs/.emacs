@@ -37,3 +37,6 @@ re-downloaded in order to locate PACKAGE."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq shell-file-name "/usr/local/bin/bash")
+(setenv "PATH" (concat "/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
