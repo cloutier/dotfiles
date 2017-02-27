@@ -18,11 +18,20 @@ re-downloaded in order to locate PACKAGE."
 (package-initialize)
 
 (require-package 'evil)
+(require-package 'powerline)
+(require-package 'smooth-scrolling)
+
+(require 'powerline)
+(powerline-default-theme)
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 
 (setq evil-search-module 'evil-search
       evil-want-C-u-scroll t
       evil-want-C-w-in-emacs-state t)
 
+(setq scroll-step           1
+         scroll-conservatively 10000)
 (require 'evil)
 (evil-mode t)
 (custom-set-variables
@@ -40,3 +49,5 @@ re-downloaded in order to locate PACKAGE."
 
 (setq shell-file-name "/usr/local/bin/bash")
 (setenv "PATH" (concat "/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
+
+(show-paren-mode 1)
