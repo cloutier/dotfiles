@@ -15,16 +15,21 @@ re-downloaded in order to locate PACKAGE."
         (package-refresh-contents)
         (require-package package min-version t)))))
 
+
 (package-initialize)
 
 (require-package 'evil)
+(require-package 'color-theme-solarized)
 (require-package 'powerline)
-(require-package 'smooth-scrolling)
+
+(load-theme 'solarized t)
+(require 'color-theme)
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
 
 (require 'powerline)
-(powerline-default-theme)
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
+(set-face-attribute 'mode-line-inactive nil
+                    :box nil)
 
 (setq evil-search-module 'evil-search
       evil-want-C-u-scroll t
@@ -39,13 +44,16 @@ re-downloaded in order to locate PACKAGE."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil))))
+ '(package-selected-packages (quote (evil)))
+ '(powerline-default-separator (quote wave))
+ '(powerline-height 9))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(powerline-active1 ((t (:background "dark blue"))))
+ '(powerline-active2 ((t (:background "dark cyan")))))
 
 (setq shell-file-name "/usr/local/bin/bash")
 (setenv "PATH" (concat "/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
