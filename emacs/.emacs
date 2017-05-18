@@ -1,6 +1,6 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;;; from purcell/emacs.d
 (defun require-package (package &optional min-version no-refresh)
@@ -44,7 +44,12 @@ re-downloaded in order to locate PACKAGE."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil)))
+ '(custom-safe-themes
+   (quote
+    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
+ '(package-selected-packages
+   (quote
+    (smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
  '(powerline-default-separator (quote wave))
  '(powerline-height 9))
 (custom-set-faces
@@ -59,3 +64,8 @@ re-downloaded in order to locate PACKAGE."
 (setenv "PATH" (concat "/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
 
 (show-paren-mode 1)
+
+(set-frame-parameter (selected-frame) 'alpha '(97 80))
+
+(setq inhibit-splash-screen t)
+(switch-to-buffer "*scratch*")
