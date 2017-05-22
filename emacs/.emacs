@@ -60,8 +60,9 @@ re-downloaded in order to locate PACKAGE."
  '(powerline-active1 ((t (:background "dark blue"))))
  '(powerline-active2 ((t (:background "dark cyan")))))
 
-(setq shell-file-name "/usr/local/bin/bash")
 (setenv "PATH" (concat "/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
+(if (eq system-type 'darwin)
+    (setq shell-file-name "/usr/local/bin/bash"))
 
 (show-paren-mode 1)
 
