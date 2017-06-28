@@ -49,7 +49,7 @@ re-downloaded in order to locate PACKAGE."
     ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
+    (ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
  '(powerline-default-separator (quote wave))
  '(powerline-height 9))
 (custom-set-faces
@@ -70,3 +70,18 @@ re-downloaded in order to locate PACKAGE."
 
 (setq inhibit-splash-screen t)
 (switch-to-buffer "*scratch*")
+
+;; stole this from: https://www.quora.com/What-does-Tikhon-Jelviss-Emacs-setup-look-like
+(defun new-shell (name)
+  "Opens a new shell buffer with the given name in
+asterisks (*name*) in the current directory and changes the
+prompt to 'name>'."
+  (interactive "sName: ")
+  (pop-to-buffer (concat "*" name "*"))
+  (unless (eq major-mode 'shell-mode)
+    (shell (current-buffer))
+    (sleep-for 0 200)
+    (delete-region (point-min) (point-max))
+    (comint-simple-send (get-buffer-process (current-buffer)) 
+                        (concat "export PS1=\"\033[33m" name "\033[0m:\033[35m\\W\033[0m>\""))))
+(global-set-key (kbd "C-c s") 'new-shell)
