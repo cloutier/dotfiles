@@ -51,7 +51,9 @@ re-downloaded in order to locate PACKAGE."
    (quote
     (ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
  '(powerline-default-separator (quote wave))
- '(powerline-height 9))
+ '(powerline-height 9)
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
