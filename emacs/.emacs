@@ -49,9 +49,13 @@ re-downloaded in order to locate PACKAGE."
     ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
+    (haskell-mode ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
  '(powerline-default-separator (quote wave))
  '(powerline-height 9)
+ '(safe-local-variable-values
+   (quote
+    ((haskell-process-use-ghci . t)
+     (haskell-indent-spaces . 4))))
  '(scroll-bar-mode nil)
  '(show-paren-mode t))
 (custom-set-faces
