@@ -21,6 +21,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'evil)
 (require-package 'color-theme-solarized)
 (require-package 'powerline)
+(require 'org)
 
 (load-theme 'solarized t)
 (require 'color-theme)
@@ -99,3 +100,5 @@ prompt to 'name>'."
   kept-old-versions 2
   version-control t)
 
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
