@@ -48,6 +48,12 @@ re-downloaded in order to locate PACKAGE."
  '(custom-safe-themes
    (quote
     ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
+ '(org-babel-load-languages
+   (quote
+    ((python . t)
+     (js . t)
+     (shell . t)
+     (emacs-lisp . t))))
  '(package-selected-packages
    (quote
     (haskell-mode ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
