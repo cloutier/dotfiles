@@ -56,7 +56,7 @@ re-downloaded in order to locate PACKAGE."
      (emacs-lisp . t))))
  '(package-selected-packages
    (quote
-    (haskell-mode ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
+    (ox-hugo ob-async haskell-mode ssh s weechat smart-mode-line-powerline-theme smart-mode-line powerline-evil clojure-mode cider evil)))
  '(powerline-default-separator (quote wave))
  '(powerline-height 9)
  '(safe-local-variable-values
@@ -109,3 +109,8 @@ prompt to 'name>'."
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-babel-python-command "python3")
+(require-package 'ob-async)
+(require 'ob-async)
+
+(require-package 'ox-hugo)
+(require 'ox-huge)
