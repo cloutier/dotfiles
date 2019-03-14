@@ -113,4 +113,8 @@ prompt to 'name>'."
 (require 'ob-async)
 
 (require-package 'ox-hugo)
-(require 'ox-huge)
+(defun org-babel-execute:wolfram (body params)
+  "Execute a block of wolfram code with org-babel."
+  (message "executing Wolfram source code block")
+  (org-babel-eval "wolframscript" body))
+
