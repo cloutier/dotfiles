@@ -19,14 +19,9 @@ re-downloaded in order to locate PACKAGE."
 (package-initialize)
 
 (require-package 'evil)
-(require-package 'color-theme-solarized)
+(require-package 'color-theme-modern)
 (require-package 'powerline)
 (require 'org)
-
-(load-theme 'solarized t)
-(require 'color-theme)
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
 
 (require 'powerline)
 (set-face-attribute 'mode-line-inactive nil
@@ -73,7 +68,7 @@ re-downloaded in order to locate PACKAGE."
  '(powerline-active1 ((t (:background "dark blue"))))
  '(powerline-active2 ((t (:background "dark cyan")))))
 
-(setenv "PATH" (concat "/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
+(setenv "PATH" (concat "/home/vincent/.cargo/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin" (getenv "PATH")))
 (if (eq system-type 'darwin)
     (setq shell-file-name "/usr/local/bin/bash"))
 
@@ -116,5 +111,12 @@ prompt to 'name>'."
 (defun org-babel-execute:wolfram (body params)
   "Execute a block of wolfram code with org-babel."
   (message "executing Wolfram source code block")
-  (org-babel-eval "wolframscript" body))
+  (org-babel-eval "principia stdin" body))
 
+(provide 'ob-wolfram)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((C . t)
+    (wolfram . t)
+   ))
