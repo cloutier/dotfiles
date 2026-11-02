@@ -1,0 +1,57 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "Noto Sans CJK JP", sans-serif;
+  font-size: 13px;
+}
+
+window#waybar {
+  background: rgba(20, 20, 20, 0.92);
+  color: #e8e8e8;
+}
+
+#workspaces {
+  margin-left: 6px;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  margin: 6px 3px;
+  background: transparent;
+  color: #bdbdbd;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+#workspaces button.visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f0f0f0;
+}
+
+#group-sysmon,
+#cpu,
+#memory,
+#custom-gpu,
+#temperature,
+#disk,
+#clock,
+#tray {
+  margin: 6px 3px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#memory.warning,
+#temperature.critical {
+  color: #ffcc66;
+}
+
+#memory.critical {
+  color: #ff6b6b;
+}
